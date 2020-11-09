@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="14e00dd3-309a-4969-859a-a79255273dd5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1ixtxvj6sh9gp5IuTsNpyYoaciX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.CSS" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="14e00dd3-309a-4969-859a-a79255273dd5" name="Default Changelist" comment="" />
+      <created>1602861320502</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602861320502</updated>
+      <workItem from="1602861321652" duration="7019000" />
+      <workItem from="1602994984160" duration="16022000" />
+      <workItem from="1603030460130" duration="12568000" />
+      <workItem from="1603084983471" duration="1384000" />
+      <workItem from="1603092250209" duration="5843000" />
+      <workItem from="1603342456512" duration="8140000" />
+      <workItem from="1603867793286" duration="1962000" />
+      <workItem from="1604890495680" duration="320000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602997599936">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="421" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1602997599936" />
+    <state x="441" y="234" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602862166569">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="441" y="234" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1602862166569" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603343812987">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603343812987" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1602862520051">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602862520051" />
+    <state x="453" y="238" width="613" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1602862300939">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="453" y="238" width="613" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1366.728@0.0.1366.728" timestamp="1602862300939" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1603095137876">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1603095137876" />
+  </component>
+</project>
