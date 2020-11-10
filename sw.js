@@ -53,33 +53,29 @@ self.addEventListener("install", event => {
     self.skipWaiting();
 });
 //Fetch Service Worker
-self.addEventListener("fetch", event => {
-    let base_url = "https://api.football-data.org/"
-    if(event.request.url.indexOf(base_url) > -1){
-        event.respondWith(
-            caches.open(CACHE_NAME)
-                .then(cache => {
-                    return fetch(event.request)
-                        .then(response => {
-                            cache.put(event.request.url, response.clone())
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        caches.match(event.request, {cacheName:CACHE_NAME, ignoreSearch : true})
+            .then(function(response) {
+                if (response) {
+                    return response;
+                }
+                var fetchRequest = event.request.clone();
+                return fetch(fetchRequest).then(
+                    function(response) {
+                        if(!response || response.status !== 200) {
                             return response;
-                        })
-                })
-        )
-    }else{
-        event.respondWith(
-            caches
-                .match(event.request, { cacheName: CACHE_NAME })
-                .then(response => {
-                    if(response){
-                        //console.log(`Service Worker: Gunakan aset dari cache: ${response.url}`)
-                        return response
+                        }
+                        var responseToCache = response.clone();
+                        caches.open(CACHE_NAME)
+                            .then(function(cache) {
+                                cache.put(event.request, responseToCache);
+                            });
+                        return response;
                     }
-                    //console.log(`ServiceWorker: Memuat aset dari server: ${event.request.url}`)
-                        return fetch(event.request)
-                })
-        )
-    }
+                );
+            })
+    );
 });
 
 //Delete Old Service Worker

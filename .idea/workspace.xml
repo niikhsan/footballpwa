@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14e00dd3-309a-4969-859a-a79255273dd5" name="Default Changelist" comment="" />
+    <list default="true" id="14e00dd3-309a-4969-859a-a79255273dd5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pushServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/pushServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/sw-register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/sw-register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/sw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.common.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +17,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ixtxvj6sh9gp5IuTsNpyYoaciX" />
   <component name="ProjectViewState">
@@ -18,7 +29,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../clinic_pwa" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.CSS" />
@@ -39,7 +50,10 @@
       <workItem from="1603092250209" duration="5843000" />
       <workItem from="1603342456512" duration="8140000" />
       <workItem from="1603867793286" duration="1962000" />
-      <workItem from="1604890495680" duration="320000" />
+      <workItem from="1604890495680" duration="2241000" />
+      <workItem from="1604971172080" duration="2153000" />
+      <workItem from="1604975103795" duration="16007000" />
+      <workItem from="1605015670922" duration="318000" />
     </task>
     <servers />
   </component>
@@ -55,10 +69,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="441" y="234" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1602862166569" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603343812987">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1604993645952">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603343812987" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604993645952" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1602862520051">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
