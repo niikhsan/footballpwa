@@ -1,8 +1,8 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
 const urlsToCache = [
     { url: "/", revision: "1" },
-    { url: "/dist/bundle.js", revision: "1" },
-    { url: "/dist/index.html", revision: "1" },
+    { url: "/bundle.js", revision: "1" },
+    { url: "/index.html", revision: "1" },
     { url: "/fonts/FontAwesome.otf", revision: "1" },
     { url: "/fonts/fontawesome-webfont.eot", revision: "1" },
     { url: "/fonts/fontawesome-webfont.svg", revision: "1" },
