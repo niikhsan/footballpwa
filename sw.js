@@ -1,97 +1,81 @@
-const CACHE_NAME = "PWAFC";
-const urlsToCache = [
-    "/",
-    "/dist/bundle.js",
-    "/dist/index.html",
-    "/fonts/FontAwesome.otf",
-    "/fonts/fontawesome-webfont.eot",
-    "/fonts/fontawesome-webfont.svg",
-    "/fonts/fontawesome-webfont.ttf",
-    "/fonts/fontawesome-webfont.woff",
-    "/fonts/fontawesome-webfont.woff2",
-    "/fonts/font-awesome.css",
-    "/iconfont/material-icons.css",
-    "/iconfont/MaterialIcons-Regular.eot",
-    "/iconfont/MaterialIcons-Regular.woff2",
-    "/iconfont/MaterialIcons-Regular.woff",
-    "/iconfont/MaterialIcons-Regular.ttf",
-    "/iconfont/MaterialIcons-Regular.svg",
-    "/materialize/css/materialize.min.css",
-    "/materialize/js/materialize.min.js",
-    "/src/pages/bookmark.html",
-    "/src/pages/home.html",
-    "/src/pages/nav.html",
-    "/src/pages/team.html",
-    "/src/css/style.css",
-    "/src/js/idb.js",
-    "/src/js/main.js",
-    "/src/js/sw-register.js",
-    "/src/js/modules/api.js",
-    "/src/js/modules/database.js",
-    "/src/js/modules/listener.js",
-    "/src/js/modules/nav.js",
-    "/src/js/modules/page.js",
-    "/package-lock.json",
-    "/package.json",
-    "/webpack.common.js",
-    "/webpack.dev.js",
-    "/webpack.prod.js",
-    "/manifest.json",
-    "/index.html",
-    "/favicon.ico",
-    "/icon.png",
-    "/icon192.png",
-    "/icon512.png"
-]
-//Install Service Worker
-self.addEventListener("install", event => {
-    event.waitUntil(
-        caches
-            .open(CACHE_NAME)
-            .then(cache => cache.addAll(urlsToCache))
-    )
-    self.skipWaiting();
-});
-//Fetch Service Worker
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.match(event.request, {cacheName:CACHE_NAME, ignoreSearch : true})
-            .then(function(response) {
-                if (response) {
-                    return response;
-                }
-                var fetchRequest = event.request.clone();
-                return fetch(fetchRequest).then(
-                    function(response) {
-                        if(!response || response.status !== 200) {
-                            return response;
-                        }
-                        var responseToCache = response.clone();
-                        caches.open(CACHE_NAME)
-                            .then(function(cache) {
-                                cache.put(event.request, responseToCache);
-                            });
-                        return response;
-                    }
-                );
-            })
-    );
-});
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
 
-//Delete Old Service Worker
-self.addEventListener("activate", event => {
-    event.waitUntil(
-        caches.keys()
-        .then(cacheNames => Promise.all(
-            cacheNames.map(cacheName => {
-                if(cacheName != CACHE_NAME && cacheName.startsWith("PWAFC")){
-                    console.log(`Cache ${cacheName} dihapus`);
-                    return caches.delete(cacheName)
-                }
-            })
-            ))
-        )
-});
+const urlsToCache = [
+    { url: "/", revision: "1" },
+    { url: "/dist/bundle.js", revision: "1" },
+    { url: "/dist/index.html", revision: "1" },
+    { url: "/fonts/FontAwesome.otf", revision: "1" },
+    { url: "/fonts/fontawesome-webfont.eot", revision: "1" },
+    { url: "/fonts/fontawesome-webfont.svg", revision: "1" },
+    { url: "/fonts/fontawesome-webfont.ttf", revision: "1" },
+    { url: "/fonts/fontawesome-webfont.woff", revision: "1" },
+    { url: "/fonts/fontawesome-webfont.woff2", revision: "1" },
+    { url: "/fonts/font-awesome.css", revision: "1" },
+    { url: "/iconfont/material-icons.css", revision: "1" },
+    { url: "/iconfont/MaterialIcons-Regular.eot", revision: "1" },
+    { url: "/iconfont/MaterialIcons-Regular.woff2", revision: "1" },
+    { url: "/iconfont/MaterialIcons-Regular.woff", revision: "1" },
+    { url: "/iconfont/MaterialIcons-Regular.ttf", revision: "1" },
+    { url: "/iconfont/MaterialIcons-Regular.svg", revision: "1" },
+    { url: "/materialize/css/materialize.min.css", revision: "1" },
+    { url: "/materialize/js/materialize.min.js", revision: "1" },
+    { url: "/src/pages/bookmark.html", revision: "1" },
+    { url: "/src/pages/home.html", revision: "1" },
+    { url: "/src/pages/nav.html", revision: "1" },
+    { url: "/src/pages/team.html", revision: "1" },
+    { url: "/src/css/style.css", revision: "1" },
+    { url: "/src/js/idb.js", revision: "1" },
+    { url: "/src/js/main.js", revision: "1" },
+    { url: "/src/js/sw-register.js", revision: "1" },
+    { url: "/src/js/modules/api.js", revision: "1" },
+    { url: "/src/js/modules/database.js", revision: "1" },
+    { url: "/src/js/modules/listener.js", revision: "1" },
+    { url: "/src/js/modules/nav.js", revision: "1" },
+    { url: "/src/js/modules/page.js", revision: "1" },
+    { url: "/package-lock.json", revision: "1" },
+    { url: "/package.json", revision: "1" },
+    { url: "/webpack.common.js", revision: "1" },
+    { url: "/webpack.dev.js", revision: "1" },
+    { url: "/webpack.prod.js", revision: "1" },
+    { url: "/manifest.json", revision: "1" },
+    { url: "/index.html", revision: "1" },
+    { url: "/favicon.ico", revision: "1" },
+    { url: "/icon.png", revision: "1" },
+    { url: "/icon192.png", revision: "1" },
+    { url: "/icon512.png", revision: "1" },
+]
+if (workbox){
+    workbox.precaching.precacheAndRoute(urlsToCache);
+
+    workbox.routing.registerRoute(
+        /.*(?:png|gif|jpg|jpeg|svg)$/,
+        workbox.strategies.cacheFirst({
+            cacheName: "image-cache",
+            plugins: [
+                new workbox.expiration.Plugin({
+                    maxEntries: 100,
+                    maxAgeSeconds: 30 * 24 * 60 * 60,
+                }),
+            ]
+        })
+    );
+
+    workbox.routing.registerRoute(
+        new RegExp('https://api.football-data.org/v2/'),
+        workbox.strategies.staleWhileRevalidate()
+    )
+
+    // Caching Google Fonts
+    workbox.routing.registerRoute(
+        /.*(?:googleapis|gstatic)\.com/,
+        workbox.strategies.staleWhileRevalidate({
+            cacheName: 'google-fonts-stylesheets',
+        })
+    );
+}else {
+    console.log("workbox failed");
+}
+
 //Response to Push Notification
 self.addEventListener("push", event => {
     let body;
