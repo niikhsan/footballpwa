@@ -1,5 +1,4 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
-
 const urlsToCache = [
     { url: "/", revision: "1" },
     { url: "/dist/bundle.js", revision: "1" },
