@@ -30,7 +30,7 @@ function loadNav() {
     });
   }
 };
-xhttp.open("GET", "../../src/pages/nav.html", true);
+xhttp.open("GET", "../src/pages/nav.html", true);
 xhttp.send();
 }
 
